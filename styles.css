@@ -1,0 +1,366 @@
+:root {
+  --base-font-size: 16px;
+  --bg-color: white;
+  --fg-color: cornflowerblue;
+  --font-family: "Didact Gothic", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --form-selected-color: yellow;
+  --dark-gray: rgb(124, 120, 120);
+  --backgroun-color: #FFC93C;
+  --light-grey: rgb(214, 207, 207);
+  --color-sample-3: blue;
+}
+
+body {
+  font-family: var(--font-family);
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 8px 60px;
+}
+
+hr.solid {
+  border-top: 2px solid #777575;
+  margin-block-start: 0.1em;
+}
+
+nav.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+nav.navbar {
+  background-color: var(--backgroun-color);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+}
+nav.navbar ul {
+  display: flex;
+  list-style-type: none;
+  align-items: baseline;
+  padding-inline-start: 0px;
+}
+nav.navbar ul li {
+  position: relative;
+}
+nav.navbar ul li .dropdown a {
+  color: green;
+}
+nav.navbar ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  left: 0;
+  display: none;
+  padding-inline-start: 0px;
+}
+nav.navbar ul li .title {
+  font-weight: normal;
+  font-weight: normal;
+  font-size: 2em;
+  letter-spacing: 0.15em;
+  margin-bottom: 0;
+  padding: 0 1em;
+}
+nav.navbar ul li a {
+  display: block;
+  color: black;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  transition: 300ms;
+}
+nav.navbar ul li a:hover {
+  background-color: yellow;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+nav.navbar ul li a:active {
+  background-color: orange;
+}
+nav.navbar ul li:hover > ul, nav.navbar ul a:hover {
+  background-color: orange;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+h5, h4 {
+  color: grey;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h6 {
+  letter-spacing: 0.15em;
+  color: red;
+}
+
+button {
+  padding: 0.5em 0.75em;
+  background-color: var(--bg-color);
+  border: 1px solid;
+  color: var(--fg-color);
+  border-radius: 0.5em;
+  font-size: var(--base-font-size);
+  transition: 200ms;
+}
+
+button:hover {
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+}
+
+button.btn-alert {
+  --fg-color: red;
+}
+
+button.btn-dark {
+  --fg-color: rgb(51, 48, 48);
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  /* Your styles here */
+  padding: 1em;
+  font-size: 0.8em;
+  border: 3px solid var(--dark-gray);
+  /* use a custom property! */
+  border-radius: 0.3em;
+  /* Removing the outline! */
+  /* Animate changes */
+  transition: 300ms;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+  /* Your styles here */
+  outline: blue;
+  border-color: var(--backgroun-color);
+  /* Use a custom property! */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 0.8em 0.3em;
+}
+
+input[type=submit], button[type=submit] {
+  align-self: flex-end;
+}
+
+input[type=submit] {
+  font-size: 1.5em;
+  padding: 5px 13px;
+}
+
+pre {
+  font-size: 14px;
+  background-color: beige;
+  padding: 10px 10px 0px 0px;
+}
+
+section_title {
+  font-size: 1.5em;
+  letter-spacing: 0.06em;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+p {
+  margin-block-start: 0em;
+  color: #636060;
+}
+
+.to-the-end {
+  height: 300px;
+}
+
+.selectors > label {
+  margin: 1.5em 1em;
+  display: block;
+}
+
+.checkbox > span {
+  padding: 0.5em 5.5em;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox > input[type=checkbox] + span::before {
+  content: "";
+  display: inline-block;
+  border: 2px solid #302a2a;
+  border-radius: 0.2em;
+  width: 3.5em;
+  height: 1.5em;
+  position: absolute;
+  left: 0.25em;
+  top: 0.25em;
+  background-color: var(--light-grey);
+  transition: 400ms;
+}
+
+.checkbox > input[type=checkbox]:checked + span::before {
+  background-color: var(--backgroun-color);
+}
+
+.checkbox > input[type=checkbox] + span::after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: #8f8c8c;
+  border: 2px solid #8f8c8c;
+  border-radius: 50%;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  transition: 400ms;
+}
+
+.checkbox > input[type=checkbox]:checked + span::after {
+  left: 2.5em;
+  background-color: green;
+  border-color: green;
+}
+
+.radio > span {
+  padding: 0.5em 3.5em;
+  position: relative;
+}
+
+.radio > input[type=radio] + span::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  border: 1px solid grey;
+  border-radius: 50%;
+  left: 0.25em;
+  top: 0.65em;
+}
+
+.radio > input[type=radio]:checked + span::before {
+  background-color: wheat;
+}
+
+.radio > input[type=radio]:checked + span::after {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  background-color: red;
+  position: absolute;
+  left: 0.5em;
+  bottom: 0.75em;
+  border-radius: 50%;
+}
+
+.checkbox-check {
+  width: 650px;
+}
+
+.radio {
+  width: 650px;
+}
+
+.checkbox-check > span {
+  padding: 0.5em 3.5em;
+  position: relative;
+}
+
+.checkbox-check > input[type=checkbox] + span::before {
+  content: "";
+  display: inline;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  border: 1px solid grey;
+  left: 0.25em;
+  top: 0.65em;
+}
+
+.checkbox-check > input[type=checkbox]:checked + span::before {
+  background-color: wheat;
+}
+
+.checkbox-check > input[type=checkbox]:checked + span::after {
+  content: "";
+  width: 0.8em;
+  height: 0.3em;
+  position: absolute;
+  left: 0.35em;
+  bottom: 0.95em;
+  transform: rotate(-45deg);
+  border-bottom: 0.2em solid red;
+  border-left: 0.2em solid red;
+}
+
+.checkbox > input {
+  display: none;
+}
+
+.checkbox-check > input {
+  display: none;
+}
+
+.radio > input {
+  display: none;
+}
+
+textarea {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #528317;
+}
+.footer ul {
+  display: flex;
+  list-style-type: none;
+  align-items: baseline;
+  padding-inline-start: 0px;
+  color: white;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+  padding: 2px 16px;
+}
+
+/*# sourceMappingURL=styles.css.map */
